@@ -40,6 +40,7 @@ class ChannelBar : public Window
  protected:
   uint8_t channel = 0;
   int16_t value = -10000;
+  bool extendedLimits = false;
   std::string valStr;
   std::function<int16_t()> getValue;
   lv_obj_t* valText = nullptr;
@@ -80,8 +81,6 @@ class ComboChannelBar : public Window
   // using ChannelBar::ChannelBar;
   ComboChannelBar(Window* parent, const rect_t& rect, uint8_t channel,
                   bool isInHeader = false);
-
-  static LAYOUT_VAL(ICON_SZ, 25, 25, 16)
 
  protected:
   uint8_t channel;
